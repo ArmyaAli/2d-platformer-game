@@ -36,7 +36,7 @@ mingw32-make setup
 ```
 5. Go to the raylib distribution pkg you downloaded in step 2. 
 ```
-mv raylib.a  2d-platformer-game\lib
+mv lib\raylib.a  2d-platformer-game\lib
 mv include\*.h  2d-platformer-game\include\raylib
 ```
 6. Compile and run the program
