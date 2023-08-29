@@ -23,6 +23,8 @@ C:.
 C:\dev\tools\mingw64\bin
 ```
 2. Get Raylib [Download Library & Header files](https://github.com/raysan5/raylib/releases)
+   ![image](https://github.com/ArmyaAli/2d-platformer-game/assets/11745376/66a28356-3667-43f7-8b44-ee123dc2426e)
+
 3. Clone the repository
 ```
 git clone https://github.com/ArmyaAli/2d-platformer-game.git
