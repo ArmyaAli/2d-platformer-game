@@ -9,12 +9,18 @@
 #     at the same time every time :)                                                                  #
 #                                                                                                     #
 #######################################################################################################
+
 .PHONY: build
 
 SHELL       :=  cmd
 
 BUILD_DIR   :=  build
+INC_DIR     :=  include
 SRC_DIR     :=  src
+LIB_DIR     :=  lib
+
+INC			:= -Iinclude -Iinclude\raylib
+LIB         :=  -lraylib -lopengl32 -lgdi32 -lwinmm
 
 COMPILER    :=  gcc 
 
@@ -25,7 +31,12 @@ run : build
 
 build : 
 	@IF NOT EXIST $(BUILD_DIR) ( MD build ) 
-	@gcc $(SRC_FILES) -o $(BUILD_DIR)\main.exe 
+	@gcc $(SRC_FILES)  -Llib $(LIB) $(INC) -o $(BUILD_DIR)\main.exe 
+
+setup : 
+	@IF NOT EXIST $(BUILD_DIR) ( MD build ) 
+	@IF NOT EXIST $(INC_DIR) ( MD include include\raylib ) 
+	@IF NOT EXIST $(LIB_DIR) ( MD lib ) 
 
 clean :
 	@IF NOT EXIST $(BUILD_DIR) ( ECHO Nothing to clean. ) 
