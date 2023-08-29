@@ -5,7 +5,6 @@
 - Install Git [Downloads](https://git-scm.com/downloads)
 - Install MinGW toolchain [Downloads](https://www.mingw-w64.org/downloads/](https://github.com/niXman/mingw-builds-binaries/releases)
     ![image](https://github.com/ArmyaAli/2d-platformer-game/assets/11745376/84242f80-c238-46ac-8516-ee2b3d31c2fe)
-- Git
 - Text editor of your choice
 - Shell of your choice 
 #### Instructions
