@@ -28,27 +28,47 @@ int main(void)
 
     SetTargetFPS(60);               // Set our game to run at 60 frames-per-second
     //--------------------------------------------------------------------------------------
+    //Set a ball radius
+    int ballRadius = 50;
 
+    //--------------------------------------------------------------------------------------
+    //Setting Max boundaries so that ball does not go out of window
+    float xMax = screenWidth - ballRadius;
+    float xMin = 0 + ballRadius;
+    float yMax = screenHeight - ballRadius; 
+    float yMin = 0 + ballRadius;
     // Main game loop
     while (!WindowShouldClose())    // Detect window close button or ESC key
     {
+        
         // Update
         //----------------------------------------------------------------------------------
-        if (IsKeyDown(KEY_RIGHT)) ballPosition.x += 2.0f;
-        if (IsKeyDown(KEY_LEFT)) ballPosition.x -= 2.0f;
-        if (IsKeyDown(KEY_UP)) ballPosition.y -= 2.0f;
-        if (IsKeyDown(KEY_DOWN)) ballPosition.y += 2.0f;
-        //----------------------------------------------------------------------------------
+        if (IsKeyDown(KEY_RIGHT) && ballPosition.x <= xMax){ 
+            ballPosition.x += 2.0f;
+        }
+        if (IsKeyDown(KEY_LEFT) && ballPosition.x >= xMin){
+            ballPosition.x -= 2.0f;
+        } 
+        if (IsKeyDown(KEY_UP) && ballPosition.y >= yMin) {
+            ballPosition.y -= 2.0f;
+        }
+        if (IsKeyDown(KEY_DOWN) && ballPosition.y <= yMax){ 
+            ballPosition.y += 2.0f;
+        }
 
+        if (IsKeyDown(KEY_SPACE))  ballPosition.y -= 10.0f;
+        
+        //----------------------------------------------------------------------------------
+        
         // Draw
         //----------------------------------------------------------------------------------
         BeginDrawing();
 
-            ClearBackground(RAYWHITE);
+            ClearBackground(RAYWHITE);  
 
-            DrawText("move the ball with arrow keys", 10, 10, 20, DARKGRAY);
+            DrawText("hello", 10, 10, 20, DARKGRAY);
 
-            DrawCircleV(ballPosition, 50, MAROON);
+            DrawCircleV(ballPosition, ballRadius, MAROON);
 
         EndDrawing();
         //----------------------------------------------------------------------------------
